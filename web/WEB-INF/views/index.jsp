@@ -4,21 +4,40 @@
 
 <html>
   <head>
-    <title>$Title$</title>
+    <title>Список заказов</title>
   </head>
   <body>
-  Hi guys!
+  <h2>Все заказы</h2>
   <spring:form action="" modelAttribute="" method="post">
-    <c:forEach items="${orders}" var="order">
-      <c:out value="${order.id}"/>|
-      <c:out value="${order.article}"/>|
-      <c:out value="${order.cost}"/>|
-      <c:out value="${order.width}"/>|
-      <c:out value="${order.height}"/>|
-      <c:out value="${order.length}"/>
-    </c:forEach>
-  </spring:form>
 
+      <table style="border: 3px dotted black">
+        <tr>
+          <th>ID</th>
+          <th> Артикул </th>
+          <th> Стоимость </th>
+          <th> Ширина </th>
+          <th> Высота </th>
+          <th> Длина </th>
+          <th> Действия </th>
+        </tr>
+        <c:forEach items="${orders}" var="order">
+          <tr>
+              <td><c:out value="${order.id}"/></td>
+              <td><c:out value="${order.article}"/></td>
+              <td><c:out value="${order.cost}"/></td>
+              <td><c:out value="${order.width}"/></td>
+              <td><c:out value="${order.height}"/></td>
+              <td><c:out value="${order.length}"/></td>
+              <td>
+                <a href="/delete?id=${order.id}">Удалить</a> |
+                <a href="/detail?id=${order.id}">Подробнее..</a> |
+                <a href="/update?id=${order.id}">Изменить</a>
+              </td>
+          </tr>
+        </c:forEach>
+      </table>
+  </spring:form>
+  <a href="/add">Добавить</a>
 
   </body>
 </html>

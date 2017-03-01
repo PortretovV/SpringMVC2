@@ -1,7 +1,6 @@
 package portvitaly.dao;
 
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Repository;
 import portvitaly.entity.Order;
 
 import javax.naming.NamingException;
@@ -63,6 +62,8 @@ public class OrderDaoImpl extends Dao implements OrderDao{
             prepStatement.setInt(5,order.getLength());
 
             int resultOperation = prepStatement.executeUpdate();
+            if(resultOperation == 1)
+                System.out.println("Добавление прошло успешно");
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -80,6 +81,9 @@ public class OrderDaoImpl extends Dao implements OrderDao{
             prepStatement.setInt(1,idOrder);
 
             int resultOperation = prepStatement.executeUpdate();
+            if(resultOperation == 1)
+                System.out.println("Удаление прошло успешно");
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -100,6 +104,8 @@ public class OrderDaoImpl extends Dao implements OrderDao{
             prepStatement.setInt(6,order.getId());
 
             int resultOperation = prepStatement.executeUpdate();
+            if(resultOperation == 1)
+                System.out.println("Изменение прошло успешно");
 
         } catch (SQLException e) {
             e.printStackTrace();

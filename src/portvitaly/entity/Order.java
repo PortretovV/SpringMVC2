@@ -11,6 +11,14 @@ public class Order {
 
     public Order(){}
 
+    public Order(String article, int cost, int width, int height, int length) {
+        this.article = article;
+        this.cost = cost;
+        this.width = width;
+        this.height = height;
+        this.length = length;
+    }
+
     public Order(int id, String article, int cost, int width, int height, int length) {
         this.id = id;
         this.article = article;
