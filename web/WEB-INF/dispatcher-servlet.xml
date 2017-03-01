@@ -19,12 +19,7 @@
 
 <context:component-scan base-package="portvitaly" />
 
-<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-    <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-    <property name="url" value="jdbc:mysql://localhost:3306/my_cklad"/>
-    <property name="username" value="root"/>
-    <property name="password" value="139139Boss12"/>
-</bean>
+
 
 <!-- Resolves views selected for rendering by @Controllers to .jsp resources
     in the /WEB-INF/views directory -->
